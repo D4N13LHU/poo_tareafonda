@@ -46,6 +46,7 @@ public class GestorFonda {
             }
         }
         System.out.println("No se encontró la bebida: " + nombre);
+
     }
 
     // TODO 5: Listar todas las bebidas

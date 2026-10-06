@@ -4,4 +4,5 @@ public class ConsumoResponsable {
     void setVentaRestringida(boolean restringida);
     boolean isVentaRestringida();
 
+
 }

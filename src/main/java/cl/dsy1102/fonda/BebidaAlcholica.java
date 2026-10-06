@@ -28,5 +28,7 @@ public class BebidaAlcholica extends Bebida implements ConsumoResponsable{
     @Override
     public boolean isVentaRestringida(){
         return this.ventaRestringida;
+
+
     }
 }
