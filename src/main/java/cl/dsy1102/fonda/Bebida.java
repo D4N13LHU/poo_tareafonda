@@ -19,6 +19,11 @@ public abstract class Bebida {
     public int getStock() { return  stock; }
     public double getPrecioBase() { return precioBase; }
 
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 
     public abstract double calcularPrecioVenta();
 }
+
+

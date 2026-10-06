@@ -1,14 +1,6 @@
 package cl.dsy1102.fonda;
 
-/**
- * Punto de entrada de la Tarea Fiestas Patrias - Fonda San Belarmino.
- *
- * Revisa el enunciado en README.md. Debes crear, en este mismo paquete,
- * las clases del diagrama: Bebida, BebidaAlcoholica, BebidaSinAlcohol,
- * la interfaz ConsumoResponsable y la clase GestorFonda.
- */
 public class Main {
-
     public static void main(String[] args) {
         BebidaSinAlcohol bebida1 = new BebidaSinAlcohol("Jugo Natural", 0.5, 50, 2000);
         BebidaSinAlcohol bebida2 = new BebidaSinAlcohol("Mote con Huesillo", 0.3, 40, 1500);
@@ -16,10 +8,26 @@ public class Main {
         BebidaAlcholica bebida4 = new BebidaAlcholica("Chicha", 1.5, 20, 2500, 2);
 
         // TODO 2: marcar la bebida alcoholica 'Chicha' con la venta restringida.
-        // TODO 3: registrarlas todas en el gestor.
-        // TODO 4: solicitar las cuatro ventas indicadas en el enunciado
-        // TODO 5: buscar por nombre "Chicha" y listar todas las bebidas.
+        bebida4.setVentaRestringida(true);
 
-        System.out.println("Proyecto listo. Comienza por la clase Bebida.");
+        // TODO 3: registrar todas en el gestor.
+        GestorFonda gestor = new GestorFonda();
+        gestor.agregarBebida(bebida1);
+        gestor.agregarBebida(bebida2);
+        gestor.agregarBebida(bebida3);
+        gestor.agregarBebida(bebida4);
+
+        // TODO 4: solicitar las cuatro ventas indicadas en el enunciado.
+        System.out.println("\n--- PROCESANDO VENTAS ---");
+        gestor.venderBebida(bebida1, 5); // Vende Jugo
+        gestor.venderBebida(bebida2, 3); // Vende Mote
+        gestor.venderBebida(bebida3, 2); // Vende Terremoto
+        gestor.venderBebida(bebida4, 1); // Intenta vender Chicha (marcará error por restricción)
+
+        // TODO 5: buscar por nombre "Chicha" y listar todas las bebidas.
+        gestor.buscarPorNombre("Chicha");
+        gestor.listarBebidas();
+
+        System.out.println("\nProyecto listo. Comienza por la clase Bebida.");
     }
 }
